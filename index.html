@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <link rel="stylesheet"
           href="stylesheet.css">
     <style>
@@ -109,6 +110,13 @@
 
 
     <script>
+
+        // ピンチジェスチャー（ズーム）を無効化する
+        //  document.addEventListener('gesturestart', function (event) {
+        //    event.preventDefault();
+        // });
+
+
         function changeAllIcons() {
             var icons = document.querySelectorAll('.icon');
 
@@ -203,10 +211,15 @@
                 }
             }
 
+            //            var textToCopy =
+            //                "空腹: " + "■".repeat(count) + "□".repeat(10 - count) +
+            //                "\nHP: " + "■".repeat(hpcount) + "□".repeat(10 - hpcount) +
+            //                "\nMP: " + "■".repeat(mpcount) + "□".repeat(10 - mpcount);
+
             var textToCopy =
-                "空腹: " + "■".repeat(count) + "□".repeat(10 - count) +
-                "\nHP: " + "■".repeat(hpcount) + "□".repeat(10 - hpcount) +
-                "\nMP: " + "■".repeat(mpcount) + "□".repeat(10 - mpcount);
+                "空腹: " + '\u25A0'.repeat(count) + "□".repeat(10 - count) +
+                "\nHP: " + '\u25A0'.repeat(hpcount) + "□".repeat(10 - hpcount) +
+                "\nMP: " + '\u25A0'.repeat(mpcount) + "□".repeat(10 - mpcount);
 
             navigator.clipboard.writeText(textToCopy);
         }
