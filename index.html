@@ -13,13 +13,21 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            font-family: "Arial", sans-serif;
+            /* font-family: "Arial", sans-serif;*/
         }
 
         .label {
+            font-weight: 800; /* フォントを太字に設定 */
+            font-size: 54px; /* 文字のサイズを24pxに設定 */
+            color: #141312; /* フォントの色を #cccccc (灰色)に設定 */
+            font-family: "Yu Gothic UI", sans-serif;
+        }
+
+        .hpmplabel {
             font-weight: bold; /* フォントを太字に設定 */
             font-size: 54px; /* 文字のサイズを24pxに設定 */
             color: #141312; /* フォントの色を #cccccc (灰色)に設定 */
+            font-family: "Arial", sans-serif;
         }
 
         .icon {
@@ -51,8 +59,9 @@
         .button {
             padding: 20px 60px; /* 上下に10px、左右に20pxの余白を設定 */
             font-size: 40px; /* 文字のサイズを24pxに設定 */
-            font-family: "Arial", sans-serif;
+            font-family: "Yu Gothic UI", sans-serif;
             margin-top: 90px;
+            color: #515151;
         }
     </style>
 </head>
@@ -74,7 +83,7 @@
     <div style="margin: 40px;"></div>
 
     <div>
-        <span class="label" onclick="changeAllHpIcons()">HP</span>
+        <span class="hpmplabel" onclick="changeAllHpIcons()">HP</span>
         <div class="hpicon" onclick="changeHpIcon(this)"></div>
         <div class="hpicon" onclick="changeHpIcon(this)"></div>
         <div class="hpicon" onclick="changeHpIcon(this)"></div>
@@ -90,7 +99,7 @@
     <div style="margin: 40px;"></div>
 
     <div>
-        <span class="label" onclick="changeAllMpIcons()">MP</span>
+        <span class="hpmplabel" onclick="changeAllMpIcons()">MP</span>
         <div class="mpicon" onclick="changeMpIcon(this)"></div>
         <div class="mpicon" onclick="changeMpIcon(this)"></div>
         <div class="mpicon" onclick="changeMpIcon(this)"></div>
