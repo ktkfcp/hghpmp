@@ -217,9 +217,10 @@
             //                "\nMP: " + "¡".repeat(mpcount) + " ".repeat(10 - mpcount);
 
             var textToCopy =
-                "‹ó• : " + '\u25A0'.repeat(count) + " ".repeat(10 - count) +
-                "\nHP: " + '\u25A0'.repeat(hpcount) + " ".repeat(10 - hpcount) +
-                "\nMP: " + '\u25A0'.repeat(mpcount) + " ".repeat(10 - mpcount);
+                "‹ó• : " + '\u25A0'.repeat(count) + '\u25A1'.repeat(10 - count) +
+                "\nHP: " + '\u25A0'.repeat(hpcount) + '\u25A1'.repeat(10 - hpcount) +
+                "\nMP: " + '\u25A0'.repeat(mpcount) + '\u25A1'.repeat(10 - mpcount);
+                "\nMP: " + '\u25A0'.repeat(mpcount) + '\u25A1'.repeat(10 - mpcount);
 
             navigator.clipboard.writeText(textToCopy);
         }
