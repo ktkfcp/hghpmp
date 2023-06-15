@@ -22,8 +22,8 @@
         }
 
         .icon {
-            width: 100px;
-            height: 100px;
+            width: 108px;
+            height: 108px;
             display: inline-block;
             background-image: url('icon1.png'); /* 初期のアイコンの画像ファイルパス */
             background-size: cover;
@@ -46,6 +46,13 @@
             background-size: cover;
         }
 
+        /* ボタンのスタイル */
+        .button {
+            padding: 20px 60px; /* 上下に10px、左右に20pxの余白を設定 */
+            font-size: 40px; /* 文字のサイズを24pxに設定 */
+            font-family: "Arial", sans-serif;
+            margin-top: 90px;
+        }
     </style>
 </head>
 <body>
@@ -80,7 +87,7 @@
     </div>
 
     <div style="margin: 40px;"></div>
-    
+
     <div>
         <span class="label" onclick="changeAllMpIcons()">MP</span>
         <div class="mpicon" onclick="changeMpIcon(this)"></div>
@@ -95,6 +102,10 @@
         <div class="mpicon" onclick="changeMpIcon(this)"></div>
     </div>
 
+
+
+    <!-- ボタンを追加 -->
+    <button class="button" onclick="getIconCount()">コピー</button>
 
 
     <script>
@@ -161,6 +172,46 @@
                 }
             }
         }
+
+        function getIconCount() {
+            var icons = document.querySelectorAll('.icon');
+            var hpicons = document.querySelectorAll('.hpicon');
+            var mpicons = document.querySelectorAll('.mpicon');
+
+            var count = 0;
+            var hpcount = 0;
+            var mpcount = 0;
+
+            for (var i = 0; i < icons.length; i++) {
+                var backgroundImage = icons[i].style.backgroundImage;
+                if (backgroundImage.includes("icon2.png")) {
+                    count++;
+                }
+            }
+
+            for (var i = 0; i < hpicons.length; i++) {
+                var backgroundImage = hpicons[i].style.backgroundImage;
+                if (backgroundImage.includes("hp_icon2.png")) {
+                    hpcount++;
+                }
+            }
+
+            for (var i = 0; i < mpicons.length; i++) {
+                var backgroundImage = mpicons[i].style.backgroundImage;
+                if (backgroundImage.includes("mp_icon2.png")) {
+                    mpcount++;
+                }
+            }
+
+            var textToCopy =
+                "空腹: " + "■".repeat(count) + "□".repeat(10 - count) +
+                "\nHP: " + "■".repeat(hpcount) + "□".repeat(10 - hpcount) +
+                "\nMP: " + "■".repeat(mpcount) + "□".repeat(10 - mpcount);
+
+            navigator.clipboard.writeText(textToCopy);
+        }
+
+
     </script>
 </body>
 </html>
