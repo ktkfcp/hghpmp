@@ -1,0 +1,15 @@
+.label {
+    margin-right: 50px; /* 右側に10pxのスペースを開ける */
+}
+
+.icon {
+    margin-right: -38px; /* アイコンとアイコンの間隔を5pxに設定 */
+}
+
+.hpicon {
+    margin-right: 4px; /* アイコンとアイコンの間隔を5pxに設定 */
+}
+
+.mpicon {
+    margin-right: 4px; /* アイコンとアイコンの間隔を5pxに設定 */
+}
