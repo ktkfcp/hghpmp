@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
     <link rel="stylesheet"
           href="stylesheet.css">
     <style>
+        /* <meta charset="UTF-8">をheadに差すと、直接htmlを開いた場合でも文字化けしてしまう
+            現状は、githubPagesで表示したときだけ文字化けするので、githubでの変換？がうまくいっていない？
+        */
 
         body {
             background-color: #e6e7e8; /* 背景色を #ececec (灰色)に設定 */
@@ -229,11 +231,10 @@
                 "空腹: " + '\u25A0'.repeat(count) + '\u25A1'.repeat(10 - count) +
                 "\nHP: " + '\u25A0'.repeat(hpcount) + '\u25A1'.repeat(10 - hpcount) +
                 "\nMP: " + '\u25A0'.repeat(mpcount) + '\u25A1'.repeat(10 - mpcount);
-                "\nMP: " + '\u25A0'.repeat(mpcount) + '\u25A1'.repeat(10 - mpcount);
+            "\nMP: " + '\u25A0'.repeat(mpcount) + '\u25A1'.repeat(10 - mpcount);
 
             navigator.clipboard.writeText(textToCopy);
         }
-
 
     </script>
 </body>
