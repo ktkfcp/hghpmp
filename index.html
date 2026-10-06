@@ -67,13 +67,33 @@
             touch-action: manipulation;
         }
 
-        /* ボタンのスタイル */
+        /* コピーボタンと成功表示 */
+        .copy-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            margin-top: 90px;
+        }
+
         .button {
             padding: 20px 60px; /* 上下に10px、左右に20pxの余白を設定 */
             font-size: 30px; /* 文字のサイズを24pxに設定 */
             font-family: "Yu Gothic UI", sans-serif;
-            margin-top: 90px;
             color: #515151;
+        }
+
+        .copy-success {
+            width: 1.2em; /* 表示・非表示でレイアウトが動かないよう場所を確保 */
+            font-size: 34px;
+            line-height: 1;
+            opacity: 0;
+            transition: opacity 0.12s ease;
+            pointer-events: none;
+        }
+
+        .copy-success.visible {
+            opacity: 1;
         }
     </style>
 </head>
@@ -126,8 +146,11 @@
 
 
 
-    <!-- ボタンを追加 -->
-    <button class="button" onclick="getIconCount()">コピー</button>
+    <!-- コピー成功時だけ右側にチェックを1秒表示 -->
+    <div class="copy-row">
+        <button class="button" onclick="getIconCount()">コピー</button>
+        <span id="copy-success" class="copy-success" aria-live="polite">✅</span>
+    </div>
 
 
     <script>
@@ -202,7 +225,27 @@
             }
         }
 
-        function getIconCount() {
+        var copySuccessTimer = null;
+
+        function showCopySuccess() {
+            var indicator = document.getElementById('copy-success');
+            if (!indicator) {
+                return;
+            }
+
+            indicator.classList.add('visible');
+
+            if (copySuccessTimer !== null) {
+                clearTimeout(copySuccessTimer);
+            }
+
+            copySuccessTimer = setTimeout(function () {
+                indicator.classList.remove('visible');
+                copySuccessTimer = null;
+            }, 1000);
+        }
+
+        async function getIconCount() {
             var icons = document.querySelectorAll('.icon');
             var hpicons = document.querySelectorAll('.hpicon');
             var mpicons = document.querySelectorAll('.mpicon');
@@ -241,9 +284,13 @@
                 "空腹: " + '\u25A0'.repeat(count) + '\u25A1'.repeat(10 - count) +
                 "\nHP: " + '\u25A0'.repeat(hpcount) + '\u25A1'.repeat(10 - hpcount) +
                 "\nMP: " + '\u25A0'.repeat(mpcount) + '\u25A1'.repeat(10 - mpcount);
-            "\nMP: " + '\u25A0'.repeat(mpcount) + '\u25A1'.repeat(10 - mpcount);
 
-            navigator.clipboard.writeText(textToCopy);
+            try {
+                await navigator.clipboard.writeText(textToCopy);
+                showCopySuccess();
+            } catch (error) {
+                console.error('クリップボードへのコピーに失敗しました。', error);
+            }
         }
 
     </script>
