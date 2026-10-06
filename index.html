@@ -2,6 +2,10 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <!-- iPad Safariでタップ直後の画像切替が遅れないよう、切替先画像を先読み -->
+    <link rel="preload" as="image" href="icon2.png">
+    <link rel="preload" as="image" href="hp_icon2.png">
+    <link rel="preload" as="image" href="mp_icon2.png">
     <link rel="stylesheet"
           href="stylesheet.css">
     <style>
@@ -56,6 +60,12 @@
             background-size: cover;
         }
 
+        /* iPad / iPhone Safariでタップ時に出る半透明のハイライトを消す */
+        [onclick], [onpointerdown] {
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
         /* ボタンのスタイル */
         .button {
             padding: 20px 60px; /* 上下に10px、左右に20pxの余白を設定 */
@@ -68,49 +78,49 @@
 </head>
 <body>
     <div>
-        <span class="label" onclick="changeAllIcons()">空腹</span>
-        <div class="icon" onclick="changeIcon(this)"></div>
-        <div class="icon" onclick="changeIcon(this)"></div>
-        <div class="icon" onclick="changeIcon(this)"></div>
-        <div class="icon" onclick="changeIcon(this)"></div>
-        <div class="icon" onclick="changeIcon(this)"></div>
-        <div class="icon" onclick="changeIcon(this)"></div>
-        <div class="icon" onclick="changeIcon(this)"></div>
-        <div class="icon" onclick="changeIcon(this)"></div>
-        <div class="icon" onclick="changeIcon(this)"></div>
-        <div class="icon" onclick="changeIcon(this)"></div>
+        <span class="label" onpointerdown="changeAllIcons()">空腹</span>
+        <div class="icon" onpointerdown="changeIcon(this)"></div>
+        <div class="icon" onpointerdown="changeIcon(this)"></div>
+        <div class="icon" onpointerdown="changeIcon(this)"></div>
+        <div class="icon" onpointerdown="changeIcon(this)"></div>
+        <div class="icon" onpointerdown="changeIcon(this)"></div>
+        <div class="icon" onpointerdown="changeIcon(this)"></div>
+        <div class="icon" onpointerdown="changeIcon(this)"></div>
+        <div class="icon" onpointerdown="changeIcon(this)"></div>
+        <div class="icon" onpointerdown="changeIcon(this)"></div>
+        <div class="icon" onpointerdown="changeIcon(this)"></div>
     </div>
 
     <div style="margin: 40px;"></div>
 
     <div>
-        <span class="hpmplabel" onclick="changeAllHpIcons()">HP</span>
-        <div class="hpicon" onclick="changeHpIcon(this)"></div>
-        <div class="hpicon" onclick="changeHpIcon(this)"></div>
-        <div class="hpicon" onclick="changeHpIcon(this)"></div>
-        <div class="hpicon" onclick="changeHpIcon(this)"></div>
-        <div class="hpicon" onclick="changeHpIcon(this)"></div>
-        <div class="hpicon" onclick="changeHpIcon(this)"></div>
-        <div class="hpicon" onclick="changeHpIcon(this)"></div>
-        <div class="hpicon" onclick="changeHpIcon(this)"></div>
-        <div class="hpicon" onclick="changeHpIcon(this)"></div>
-        <div class="hpicon" onclick="changeHpIcon(this)"></div>
+        <span class="hpmplabel" onpointerdown="changeAllHpIcons()">HP</span>
+        <div class="hpicon" onpointerdown="changeHpIcon(this)"></div>
+        <div class="hpicon" onpointerdown="changeHpIcon(this)"></div>
+        <div class="hpicon" onpointerdown="changeHpIcon(this)"></div>
+        <div class="hpicon" onpointerdown="changeHpIcon(this)"></div>
+        <div class="hpicon" onpointerdown="changeHpIcon(this)"></div>
+        <div class="hpicon" onpointerdown="changeHpIcon(this)"></div>
+        <div class="hpicon" onpointerdown="changeHpIcon(this)"></div>
+        <div class="hpicon" onpointerdown="changeHpIcon(this)"></div>
+        <div class="hpicon" onpointerdown="changeHpIcon(this)"></div>
+        <div class="hpicon" onpointerdown="changeHpIcon(this)"></div>
     </div>
 
     <div style="margin: 40px;"></div>
 
     <div>
-        <span class="hpmplabel" onclick="changeAllMpIcons()">MP</span>
-        <div class="mpicon" onclick="changeMpIcon(this)"></div>
-        <div class="mpicon" onclick="changeMpIcon(this)"></div>
-        <div class="mpicon" onclick="changeMpIcon(this)"></div>
-        <div class="mpicon" onclick="changeMpIcon(this)"></div>
-        <div class="mpicon" onclick="changeMpIcon(this)"></div>
-        <div class="mpicon" onclick="changeMpIcon(this)"></div>
-        <div class="mpicon" onclick="changeMpIcon(this)"></div>
-        <div class="mpicon" onclick="changeMpIcon(this)"></div>
-        <div class="mpicon" onclick="changeMpIcon(this)"></div>
-        <div class="mpicon" onclick="changeMpIcon(this)"></div>
+        <span class="hpmplabel" onpointerdown="changeAllMpIcons()">MP</span>
+        <div class="mpicon" onpointerdown="changeMpIcon(this)"></div>
+        <div class="mpicon" onpointerdown="changeMpIcon(this)"></div>
+        <div class="mpicon" onpointerdown="changeMpIcon(this)"></div>
+        <div class="mpicon" onpointerdown="changeMpIcon(this)"></div>
+        <div class="mpicon" onpointerdown="changeMpIcon(this)"></div>
+        <div class="mpicon" onpointerdown="changeMpIcon(this)"></div>
+        <div class="mpicon" onpointerdown="changeMpIcon(this)"></div>
+        <div class="mpicon" onpointerdown="changeMpIcon(this)"></div>
+        <div class="mpicon" onpointerdown="changeMpIcon(this)"></div>
+        <div class="mpicon" onpointerdown="changeMpIcon(this)"></div>
     </div>
 
 
