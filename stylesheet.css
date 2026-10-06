@@ -1,19 +1,19 @@
 .label {
-    margin-right: 50px; /* �E����10px�̃X�y�[�X���J���� */
+    margin-right: 50px; /* 右側に10pxのスペースを開ける */
 }
 
 .hpmplabel {
-    margin-right: 80px; /* �E����10px�̃X�y�[�X���J���� */
+    margin-right: 80px; /* 右側に10pxのスペースを開ける */
 }
 
 .icon {
-    margin-right: -51px; /* �A�C�R���ƃA�C�R���̊Ԋu��5px�ɐݒ� */
+    margin-right: -51px; /* アイコンとアイコンの間隔を5pxに設定 */
 }
 
 .hpicon {
-    margin-right: 2px; /* �A�C�R���ƃA�C�R���̊Ԋu��5px�ɐݒ� */
+    margin-right: 2px; /* アイコンとアイコンの間隔を5pxに設定 */
 }
 
 .mpicon {
-    margin-right: 2px; /* �A�C�R���ƃA�C�R���̊Ԋu��5px�ɐݒ� */
+    margin-right: 2px; /* アイコンとアイコンの間隔を5pxに設定 */
 }
